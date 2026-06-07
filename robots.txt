@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vertisco.com/sitemap.xml
