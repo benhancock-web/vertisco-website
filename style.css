@@ -62,15 +62,16 @@ section{padding:clamp(3.5rem,8vw,6.5rem) 0}
 
 /* ---------- Header / Nav ---------- */
 .site-header{
-  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);
-  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--divider);
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);
+  backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--divider);
+  box-shadow:0 6px 24px -20px rgba(10,30,61,.55);
 }
-.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:1.5rem}
+.nav{display:flex;align-items:center;justify-content:space-between;height:104px;gap:1.5rem}
 .brand{display:flex;align-items:center;gap:.7rem;flex-shrink:0}
-.brand svg{height:40px;width:auto}
-.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none}
+.brand svg{height:58px;width:auto}
+.nav-links{display:flex;align-items:center;gap:2.1rem;list-style:none}
 .nav-links a{
-  color:var(--midnight);font-weight:500;font-size:.97rem;letter-spacing:.005em;
+  color:var(--midnight);font-weight:500;font-size:1rem;letter-spacing:.005em;
   position:relative;padding:.25rem 0;
 }
 .nav-links a::after{
@@ -223,7 +224,7 @@ section{padding:clamp(3.5rem,8vw,6.5rem) 0}
 }
 @media (max-width:760px){
   .nav-links{
-    position:fixed;inset:78px 0 auto 0;background:#fff;flex-direction:column;align-items:flex-start;
+    position:fixed;inset:104px 0 auto 0;background:#fff;flex-direction:column;align-items:flex-start;
     gap:0;padding:1rem 1.5rem 1.5rem;border-bottom:1px solid var(--divider);
     transform:translateY(-120%);transition:transform .3s var(--ease);box-shadow:var(--shadow-sm);
   }
