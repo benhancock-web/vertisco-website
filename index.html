@@ -18,10 +18,8 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" type="image/svg+xml" href="Vertisco_Ascent_Icon_Dark.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="preload" href="urbanist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=5">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -268,7 +266,7 @@
           <h3 id="mqBand"></h3>
           <p id="mqVerdict"></p>
           <div class="mini-cta">
-            <a class="btn btn-primary" href="start-here.html">Get the full picture — start the Assessment <span class="arrow">→</span></a>
+            <a class="btn btn-primary" id="mqCta" href="start-here.html">Get the full picture — start the Assessment <span class="arrow">→</span></a>
             <button class="btn btn-ghost" id="mqRetry" type="button">Retake</button>
           </div>
         </div>
@@ -334,7 +332,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Vertisco Consulting</span>
+      <span>© 2026 Vertisco Consulting · <a href="privacy.html">Privacy</a></span>
       <span>Buntingford, Hertfordshire · Working UK-wide</span>
     </div>
   </div>
@@ -368,10 +366,28 @@
     },{threshold:.5});
     cnt.forEach(function(el){co.observe(el)});
   } else { cnt.forEach(setFinal); }
-  /* Subtle hero parallax (desktop, motion allowed) */
-  var hm=document.querySelector('.hero-mark');
-  if(hm && matchMedia('(min-width:981px)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-    addEventListener('scroll',function(){var y=scrollY;if(y<innerHeight*1.3)hm.style.transform='translateY('+(y*.16)+'px)';},{passive:true});
+  /* Living hero: scroll parallax + cursor-reactive depth (desktop, motion allowed) */
+  var hm=document.querySelector('.hero-mark'),hero=document.querySelector('.hero');
+  if(hm && hero && matchMedia('(min-width:981px)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var baseY=0,px=0,py=0,raf=null;
+    var apply=function(){hm.style.transform='translate('+px+'px,'+(baseY+py)+'px)';raf=null;};
+    addEventListener('scroll',function(){var y=scrollY;if(y<innerHeight*1.3){baseY=y*.16;if(!raf)raf=requestAnimationFrame(apply);}},{passive:true});
+    hero.addEventListener('pointermove',function(e){
+      var r=hero.getBoundingClientRect();
+      px=((e.clientX-r.left)/r.width-.5)*-16; py=((e.clientY-r.top)/r.height-.5)*-10;
+      if(!raf)raf=requestAnimationFrame(apply);
+    });
+    hero.addEventListener('pointerleave',function(){px=0;py=0;if(!raf)raf=requestAnimationFrame(apply);});
+  }
+  /* Magnetic CTAs */
+  if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.hero-cta .btn,.final-cta .cta-actions .btn,.mini-cta .btn').forEach(function(b){
+      b.addEventListener('mousemove',function(e){
+        var r=b.getBoundingClientRect(),dx=e.clientX-r.left-r.width/2,dy=e.clientY-r.top-r.height/2;
+        b.style.transform='translate('+dx*.16+'px,'+dy*.24+'px)';
+      });
+      b.addEventListener('mouseleave',function(){b.style.transform='';});
+    });
   }
   /* Mini readiness score */
   var MQ=[
@@ -408,6 +424,8 @@
       var pct=Math.round(total/(MQ.length*3)*100), b=band(pct);
       wrap.hidden=true; res.hidden=false;
       bd.textContent=b[0]; vd.textContent=b[1];
+      try{localStorage.setItem('vt_score',String(pct));}catch(err){}
+      var hc=document.getElementById('mqCta'); if(hc)hc.href='start-here.html?score='+pct;
       if(typeof gtag==='function')gtag('event','miniscore_complete',{score:pct,band:b[0]});
       var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
       requestAnimationFrame(function(){requestAnimationFrame(function(){

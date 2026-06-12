@@ -18,10 +18,8 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" type="image/svg+xml" href="Vertisco_Ascent_Icon_Dark.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="preload" href="urbanist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=5">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DYDHD1P7Y"></script>
@@ -96,6 +94,7 @@
     <div class="wrap">
       <div class="center rv" style="max-width:50ch;margin:0 auto 3rem">
         <span class="eyebrow" style="justify-content:center">The assessment</span>
+        <p class="score-note" id="scoreNote" hidden></p>
         <h2>Tell us how <strong>you</strong> see it.</h2>
         <p class="lede" style="margin:1.2rem auto 0">A few honest questions about how your business runs today. There are no right or wrong answers — your candid view is exactly the point. The gap between it and what we find is where we start.</p>
       </div>
@@ -240,13 +239,20 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Vertisco Consulting</span>
+      <span>© 2026 Vertisco Consulting · <a href="privacy.html">Privacy</a></span>
       <span>Buntingford, Hertfordshire · Working UK-wide</span>
     </div>
   </div>
 </footer>
 <script>
 (function(){
+  /* Mini-score handoff from the homepage quick check */
+  var sn=document.getElementById('scoreNote');
+  if(sn){
+    var m=location.search.match(/[?&]score=(\d{1,3})/);
+    var s=m?parseInt(m[1],10):(function(){try{return parseInt(localStorage.getItem('vt_score'),10)||0}catch(e){return 0}})();
+    if(s>0&&s<=100){sn.textContent='You scored '+s+'% on the quick check — this assessment is how we find out why.';sn.hidden=false;}
+  }
   var form=document.getElementById('asmForm'); if(!form) return;
   var steps=[].slice.call(form.querySelectorAll('.asm-step')), total=steps.length, i=0;
   var bar=document.getElementById('asmBar'), count=document.getElementById('asmCount');

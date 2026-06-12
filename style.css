@@ -4,6 +4,17 @@
    Design language: cinematic, editorial, motion-led.
    ============================================================ */
 
+/* Self-hosted Urbanist (variable, 100–900) */
+@font-face{font-family:'Urbanist';font-style:normal;font-weight:100 900;font-display:swap;src:url('urbanist-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Urbanist';font-style:normal;font-weight:100 900;font-display:swap;src:url('urbanist-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* Cross-document page transitions */
+@view-transition{navigation:auto}
+@keyframes vt-in{from{opacity:0;transform:translateY(12px)}}
+@keyframes vt-out{to{opacity:0}}
+::view-transition-old(root){animation:vt-out .22s ease both}
+::view-transition-new(root){animation:vt-in .38s cubic-bezier(.22,1,.36,1) both}
+
 :root{
   --midnight:#0A1E3D;
   --abyss:#050E1F;
@@ -135,6 +146,8 @@ body.no-scroll{overflow:hidden}
   backdrop-filter:blur(8px);box-shadow:0 10px 30px -14px rgba(5,14,31,.8);
 }
 .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.18);transform:translateY(-2px);color:#fff}
+.btn-primary::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
+.btn-primary:hover::after{left:125%}
 .btn .arrow{transition:transform .25s var(--ease)}
 .btn:hover .arrow{transform:translateX(5px)}
 .btn-sm{padding:.6rem 1.4rem;font-size:.88rem}
@@ -473,8 +486,37 @@ a.disc-row{cursor:pointer}
 .mini-result p{max-width:46ch;margin:0 auto}
 .mini-cta{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:1.8rem}
 
+/* ---------- FAQ ---------- */
+.faqs{max-width:760px;margin:0 auto}
+.faq{border-bottom:1px solid var(--divider)}
+.faq:first-of-type{border-top:1px solid var(--divider)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1.2rem;padding:1.35rem 0;font-weight:500;color:var(--midnight);font-size:1.08rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.6rem;font-weight:250;color:var(--vertisco);line-height:1;transition:transform .3s var(--ease);flex-shrink:0}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq .faq-a{padding:0 0 1.5rem;max-width:64ch;color:var(--body)}
+
+/* ---------- Score handoff note ---------- */
+.score-note{display:inline-flex;align-items:center;gap:.6rem;background:#eaf2fb;border:1px solid #cfe0f1;color:var(--vertisco);font-weight:600;font-size:.95rem;border-radius:50px;padding:.5rem 1.2rem;margin-bottom:1.4rem}
+
+/* ---------- Client quote band ---------- */
+.quote-band{position:relative;margin-top:4.5rem;border-left:3px solid var(--signal);padding-left:clamp(1.4rem,3vw,2.2rem);max-width:64ch}
+.quote-band blockquote{font-size:clamp(1.25rem,2.2vw,1.6rem);font-weight:300;line-height:1.5;color:#fff;quotes:none}
+.quote-band cite{display:block;margin-top:1.2rem;font-style:normal;font-size:.95rem;color:rgba(255,255,255,.6)}
+
+/* ---------- Platform illustration ---------- */
+.platform-shot{margin-top:3.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(91,155,213,.22);border-radius:var(--radius);padding:clamp(.9rem,2.2vw,1.6rem);box-shadow:var(--shadow)}
+.platform-shot svg{width:100%;height:auto;display:block;border-radius:14px}
+.platform-shot figcaption{margin-top:1rem;font-size:.88rem;color:rgba(255,255,255,.5);text-align:center}
+
+/* ---------- Footer privacy + focus polish ---------- */
+.footer-bottom a{color:rgba(255,255,255,.45)}
+.footer-bottom a:hover{color:#fff}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion:reduce){
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
   .rv,.kicker,.hero-cta,.scroll-cue,.fade-1,.fade-2,.fade-3{opacity:1;transform:none;transition:none;animation:none}
   h1 .w span{transform:none;animation:none}
   .hero-mark .m-tri,.hero-mark .edge,.hero-mark .summit{animation:none;opacity:1;transform:none;stroke-dashoffset:0}
