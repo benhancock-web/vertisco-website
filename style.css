@@ -558,7 +558,10 @@ a.disc-row{cursor:pointer}
   .nav{height:92px}
   .brand svg{height:50px}
   .nav-links{
-    position:fixed;inset:0;background:linear-gradient(170deg,var(--midnight),var(--abyss));
+    /* top/left/width/height (not inset) because the header's backdrop-filter makes it the
+       containing block for fixed descendants — inset:0 trapped the overlay in the header bar */
+    position:fixed;top:0;left:0;width:100vw;height:100vh;height:100dvh;
+    background:linear-gradient(170deg,var(--midnight),var(--abyss));
     flex-direction:column;justify-content:center;align-items:center;gap:1.2rem;
     opacity:0;pointer-events:none;transition:opacity .35s var(--ease);z-index:110;
   }
@@ -569,6 +572,13 @@ a.disc-row{cursor:pointer}
   .nav-links .menu-cta{display:block;margin-top:1.4rem}
   .nav-links li.menu-cta a{font-size:1rem;font-weight:600}
   .site-header{background:rgba(5,14,31,.85);backdrop-filter:blur(18px);border-color:rgba(91,155,213,.14)}
+}
+@media (max-width:640px){
+  /* Phones: let the logo lockup scale down so the menu button always fits on-screen */
+  .nav{gap:1rem}
+  .brand{flex-shrink:1;min-width:0}
+  .brand svg{width:100%;max-width:320px;height:auto}
+  .nav-toggle{flex-shrink:0}
 }
 @media (max-width:560px){
   .values{grid-template-columns:1fr}
