@@ -1,6 +1,1 @@
-<svg width="128" height="104" viewBox="0 0 64 56" xmlns="http://www.w3.org/2000/svg">
-  <title>Vertisco Ascent mark</title>
-  <polygon points="6,52 16,34 26,52" fill="#5B9BD5"/>
-  <polygon points="20,52 32,22 44,52" fill="#2B6CB0"/>
-  <polygon points="38,52 48,9 58,52" fill="#0A1E3D"/>
-</svg>
+<svg height="104" viewBox="0 0 64 56" width="128" xmlns="http://www.w3.org/2000/svg"><path d="m1.6 52 6.9-18 2.2 18z" fill="#85b7e2"/><path d="m8.5 34 7 18h-4.8z" fill="#5b9bd5"/><path d="m10.5 52 11.5-30 3.7 30z" fill="#3d7fc4"/><path d="m22 22 11.5 30h-7.8z" fill="#2b6cb0"/><path d="m28.5 52 16.5-43 5.3 43z" fill="#173e70"/><path d="m45 9 16.6 43h-11.3z" fill="#0a1e3d"/></svg>

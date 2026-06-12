@@ -11,20 +11,17 @@
 <!-- Open Graph / social -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vertisco Consulting">
-<meta property="og:title" content="Vertisco | Operational Intelligence &amp; AI Consulting for SMEs">
+<meta property="og:title" content="Vertisco | Operational Intelligence & AI Consulting for SMEs">
 <meta property="og:description" content="Turning complexity into clarity. Operational intelligence and practical AI for ambitious UK businesses.">
 <meta property="og:url" content="https://vertisco.com/">
-<!-- TODO: replace with a proper 1200x630 PNG share image -->
-<meta property="og:image" content="https://vertisco.com/Vertisco_Ascent_Icon_Dark.svg">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://vertisco.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" type="image/svg+xml" href="Vertisco_Ascent_Icon_Dark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
-<!-- Structured data: the practice + the person -->
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -39,25 +36,26 @@
   "slogan":"Turning complexity into clarity"
 }
 </script>
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DYDHD1P7Y"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7DYDHD1P7Y');</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-
-<header class="site-header">
+<header class="site-header" id="hdr">
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Vertisco Consulting — home">
-      <svg viewBox="0 20 360 56" width="300" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vertisco Consulting">
-        <g transform="translate(6,16)">
-          <polygon points="6,52 16,34 26,52" fill="#5B9BD5"/>
-          <polygon points="20,52 32,22 44,52" fill="#2B6CB0"/>
-          <polygon points="38,52 48,9 58,52" fill="#0A1E3D"/>
+      <svg viewBox="0 20 360 56" width="290" height="39" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vertisco Consulting">
+        <g transform="translate(4,16)">
+          <polygon class="tri" points="1.6,52 8.5,34 10.7,52" fill="#3D7FC4"/>
+          <polygon class="tri" points="8.5,34 15.5,52 10.7,52" fill="#2B6CB0"/>
+          <polygon class="tri" points="10.5,52 22,22 25.7,52" fill="#79AEDE"/>
+          <polygon class="tri" points="22,22 33.5,52 25.7,52" fill="#5B9BD5"/>
+          <polygon class="tri" points="28.5,52 45,9 50.3,52" fill="#FFFFFF"/>
+          <polygon class="tri" points="45,9 61.6,52 50.3,52" fill="#BCD2E8"/>
         </g>
-        <text x="92" y="50" font-family="Urbanist,sans-serif" font-size="31" font-weight="500" letter-spacing="6" fill="#0A1E3D">VERTISCO</text>
-        <text x="94" y="69" font-family="Urbanist,sans-serif" font-size="10.5" font-weight="500" letter-spacing="7.5" fill="#6B8BA4">CONSULTING</text>
+        <text x="92" y="50" font-family="Urbanist,sans-serif" font-size="31" font-weight="500" letter-spacing="6" fill="#FFFFFF">VERTISCO</text>
+        <text x="92" y="69" font-family="Urbanist,sans-serif" font-size="10.5" font-weight="500" letter-spacing="13.76" fill="#5B9BD5">CONSULTING</text>
       </svg>
     </a>
     <nav class="nav-cta" aria-label="Primary">
@@ -65,140 +63,202 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="how-it-works.html">How it works</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="approach.html">Approach</a></li><li><a href="insights.html">Insights</a></li>
+        <li><a href="approach.html">Approach</a></li>
+        <li><a href="insights.html">Insights</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="menu-cta"><a class="btn btn-primary btn-sm" href="start-here.html">Start the Assessment</a></li>
       </ul>
-      <a class="btn btn-primary btn-sm" href="start-here.html">Start the Assessment</a>
+      <a class="btn btn-light btn-sm" href="start-here.html">Start the Assessment</a>
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
     </nav>
   </div>
 </header>
-
 <main id="main">
 
   <!-- HERO -->
   <section class="hero">
-    <svg class="hero-motif" viewBox="0 0 1200 620" preserveAspectRatio="xMaxYMax slice" aria-hidden="true" focusable="false">
-      <g fill="#5B9BD5" opacity="0.07"><polygon points="720,620 900,250 1080,620"/><polygon points="900,620 1040,330 1180,620"/></g>
-      <polygon points="560,620 815,150 1070,620" fill="#ffffff" opacity="0.03"/>
-      <g fill="none" stroke="#5B9BD5" stroke-opacity="0.10" stroke-width="1">
-        <path d="M0 540 Q 300 470 600 520 T 1200 500"/>
-        <path d="M0 575 Q 320 510 640 555 T 1200 540"/>
-        <path d="M0 605 Q 340 555 660 590 T 1200 580"/>
+    <div class="aurora" aria-hidden="true"><div class="a1"></div><div class="a2"></div><div class="a3"></div></div>
+    <svg class="hero-mark" viewBox="0 0 640 520" aria-hidden="true" focusable="false">
+      <g class="m-tri m1">
+        <polygon points="60,520 160,340 192,520" fill="#3D7FC4" opacity=".32"/>
+        <polygon points="160,340 260,520 192,520" fill="#2B6CB0" opacity=".26"/>
       </g>
+      <g class="m-tri m2">
+        <polygon points="200,520 330,220 372,520" fill="#79AEDE" opacity=".32"/>
+        <polygon points="330,220 460,520 372,520" fill="#5B9BD5" opacity=".26"/>
+      </g>
+      <g class="m-tri m3">
+        <polygon points="380,520 480,90 512,520" fill="#FFFFFF" opacity=".26"/>
+        <polygon points="480,90 580,520 512,520" fill="#BCD2E8" opacity=".18"/>
+      </g>
+      <path class="edge" d="M380,520 L480,90 L580,520"/>
+      <path class="edge" d="M480,90 L512,520" opacity=".5"/>
+      <circle class="summit" cx="480" cy="86" r="4" fill="#fff"/>
+      <circle class="summit" cx="480" cy="86" r="10" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
     </svg>
     <div class="wrap">
-      <span class="eyebrow">Operational Excellence</span>
-      <h1>Turning complexity into <strong>clarity.</strong></h1>
-      <p class="lede">Your business has grown. Your systems haven't kept up. We find what's slowing you down — and use AI and automation to fix it properly.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="start-here.html">Start the Readiness Assessment</a>
-        <span class="small">or <a href="contact.html">book a quick call →</a></span>
+      <span class="kicker">Operational Excellence</span>
+      <h1 aria-label="Turning complexity into clarity.">
+        <span class="w"><span style="animation-delay:.35s">Turning</span></span>
+        <span class="w"><span style="animation-delay:.45s">complexity</span></span><br>
+        <span class="w"><span style="animation-delay:.55s">into</span></span>
+        <span class="w"><span class="grad" style="animation-delay:.65s">clarity.</span></span>
+      </h1>
+      <p class="lede fade-3">Your business has grown. Your systems haven't kept up. We find what's quietly slowing you down — and put AI and automation to work fixing it properly, for good.</p>
+      <div class="hero-cta fade-3">
+        <a class="btn btn-primary" href="start-here.html">Start the Readiness Assessment <span class="arrow">→</span></a>
+        <a class="btn btn-outline" href="contact.html">Book a quick call</a>
       </div>
-      <p class="cred-strip">Operational intelligence for ambitious UK businesses — built on two decades consulting inside <strong>large multinationals in the energy trading and shipping sectors</strong>.</p>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
+  </section>
+
+  <!-- CREDIBILITY MARQUEE -->
+  <div class="marquee-band" aria-hidden="true">
+    <div class="marquee">
+      <span>Operational Intelligence</span><span>Process Re-Engineering</span><span>AI-Powered Automation</span><span>Two decades inside global energy trading &amp; shipping</span><span>You own everything we build</span>
+      <span>Operational Intelligence</span><span>Process Re-Engineering</span><span>AI-Powered Automation</span><span>Two decades inside global energy trading &amp; shipping</span><span>You own everything we build</span>
+    </div>
+  </div>
+
+  <!-- 01 — THE PROBLEM -->
+  <section class="panel panel-light">
+    <span class="sec-no" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="split">
+        <div class="sticky-side rv">
+          <span class="eyebrow">The problem</span>
+          <h2>You know it could run <strong>better.</strong></h2>
+          <p style="margin-top:1.6rem;font-size:1.1rem">You're not short of ideas or drive. You've just never had the time, the resource, or an outside pair of eyes to fix it properly. <strong>That's exactly what we do.</strong></p>
+        </div>
+        <div>
+          <ul class="pain-list">
+            <li class="rv"><span class="tick">▲</span><p><strong>The data lives in spreadsheets.</strong> Critical numbers scattered across files, versions and inboxes — and no single view anyone fully trusts.</p></li>
+            <li class="rv rv-d1"><span class="tick">▲</span><p><strong>Half the process is in someone's head.</strong> When key people are away, things slow down — or stop. Knowledge walks out of the door every evening.</p></li>
+            <li class="rv rv-d2"><span class="tick">▲</span><p><strong>Nobody has a real-time picture.</strong> Decisions get made on instinct and last month's numbers, because that's all there is.</p></li>
+            <li class="rv rv-d3"><span class="tick">▲</span><p><strong>The team is too busy to fix it.</strong> Everyone can see the friction. Nobody has the bandwidth to step back and engineer it out.</p></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <section>
+  <!-- 02 — THREE DISCIPLINES -->
+  <section class="panel panel-dark">
+    <span class="sec-no" aria-hidden="true">02</span>
     <div class="wrap">
-      <div class="prose">
-        <span class="eyebrow">The problem</span>
-        <h2>You know it could run better.</h2>
-        <p>The team is busy, the business is growing — but somewhere along the way the systems stopped keeping pace. Data lives in spreadsheets. Half the process is in someone's head. Nobody has a clear, real-time picture of what's actually happening.</p>
-        <p>You're not short of ideas or drive. You've just never had the time, the resource, or an outside pair of eyes to fix it properly. <strong>That's exactly what we do.</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- THREE DISCIPLINES -->
-  <section class="bg-light">
-    <div class="wrap">
-      <div class="center" style="max-width:46ch;margin:0 auto 2.6rem">
+      <div class="rv" style="max-width:52ch;margin-bottom:3.5rem">
         <span class="eyebrow">What we do</span>
-        <h2>Three disciplines. One outcome: a business that runs better.</h2>
+        <h2>Three disciplines. One outcome: a business that runs <strong>better.</strong></h2>
       </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <svg class="peak" viewBox="0 0 64 56" aria-hidden="true"><polygon points="6,52 16,34 26,52" fill="#5B9BD5"/><polygon points="20,52 32,22 44,52" fill="#2B6CB0"/><polygon points="38,52 48,9 58,52" fill="#0A1E3D"/></svg>
-          <h3>Operational Intelligence</h3>
-          <p>We take a holistic, end-to-end view of your business — mapping how work really flows, and surfacing the hidden inefficiencies quietly costing you time and money.</p>
-        </div>
-        <div class="card">
-          <svg class="peak" viewBox="0 0 64 56" aria-hidden="true"><polygon points="6,52 16,34 26,52" fill="#5B9BD5"/><polygon points="20,52 32,22 44,52" fill="#2B6CB0"/><polygon points="38,52 48,9 58,52" fill="#0A1E3D"/></svg>
-          <h3>Process Re-Engineering</h3>
-          <p>We redesign the way work moves through your organisation — cutting duplication and manual effort, and building processes that are robust, repeatable and ready to scale.</p>
-        </div>
-        <div class="card">
-          <svg class="peak" viewBox="0 0 64 56" aria-hidden="true"><polygon points="6,52 16,34 26,52" fill="#5B9BD5"/><polygon points="20,52 32,22 44,52" fill="#2B6CB0"/><polygon points="38,52 48,9 58,52" fill="#0A1E3D"/></svg>
-          <h3>AI-Powered Automation</h3>
-          <p>We put practical, proportionate technology to work — using AI and modern tools to do the heavy lifting, so your team can focus on what they do best.</p>
-        </div>
+      <div class="disc-rows">
+        <a class="disc-row rv" href="services.html">
+          <span class="idx">01</span>
+          <div>
+            <h3>Operational Intelligence</h3>
+            <p>A holistic, end-to-end view of your business — mapping how work really flows, and surfacing the hidden inefficiencies quietly costing you time and money.</p>
+          </div>
+          <svg class="peak" viewBox="0 0 64 56" aria-hidden="true"><polygon points="1.6,52 8.5,34 10.7,52" fill="#3D7FC4"/><polygon points="8.5,34 15.5,52 10.7,52" fill="#2B6CB0"/><polygon points="10.5,52 22,22 25.7,52" fill="#79AEDE"/><polygon points="22,22 33.5,52 25.7,52" fill="#5B9BD5"/><polygon points="28.5,52 45,9 50.3,52" fill="#FFFFFF"/><polygon points="45,9 61.6,52 50.3,52" fill="#BCD2E8"/></svg>
+        </a>
+        <a class="disc-row rv" href="services.html">
+          <span class="idx">02</span>
+          <div>
+            <h3>Process Re-Engineering</h3>
+            <p>We redesign the way work moves through your organisation — cutting duplication and manual effort, and building processes that are robust, repeatable and ready to scale.</p>
+          </div>
+          <svg class="peak" viewBox="0 0 64 56" aria-hidden="true"><polygon points="1.6,52 8.5,34 10.7,52" fill="#3D7FC4"/><polygon points="8.5,34 15.5,52 10.7,52" fill="#2B6CB0"/><polygon points="10.5,52 22,22 25.7,52" fill="#79AEDE"/><polygon points="22,22 33.5,52 25.7,52" fill="#5B9BD5"/><polygon points="28.5,52 45,9 50.3,52" fill="#FFFFFF"/><polygon points="45,9 61.6,52 50.3,52" fill="#BCD2E8"/></svg>
+        </a>
+        <a class="disc-row rv" href="services.html">
+          <span class="idx">03</span>
+          <div>
+            <h3>AI-Powered Automation</h3>
+            <p>Practical, proportionate technology — AI and modern tools doing the heavy lifting, so your team can focus on what they do best.</p>
+          </div>
+          <svg class="peak" viewBox="0 0 64 56" aria-hidden="true"><polygon points="1.6,52 8.5,34 10.7,52" fill="#3D7FC4"/><polygon points="8.5,34 15.5,52 10.7,52" fill="#2B6CB0"/><polygon points="10.5,52 22,22 25.7,52" fill="#79AEDE"/><polygon points="22,22 33.5,52 25.7,52" fill="#5B9BD5"/><polygon points="28.5,52 45,9 50.3,52" fill="#FFFFFF"/><polygon points="45,9 61.6,52 50.3,52" fill="#BCD2E8"/></svg>
+        </a>
       </div>
-      <p class="center" style="margin-top:2rem;font-size:1.15rem;color:var(--midnight);font-weight:300">The technology is the means. The product is a better business.</p>
+      <p class="disc-outro rv">The technology is the means. <strong>The product is a better business.</strong></p>
     </div>
   </section>
 
-  <!-- THE WEDGE -->
-  <section class="bg-navy">
+  <!-- 03 — WHY VERTISCO -->
+  <section class="panel panel-soft">
+    <span class="sec-no" aria-hidden="true">03</span>
     <div class="wrap">
-      <div class="prose">
-        <span class="eyebrow">Why Vertisco</span>
-        <h2>We understand the business before we touch the technology.</h2>
+      <span class="eyebrow rv">Why Vertisco</span>
+      <p class="wedge-quote rv rv-d1">We understand the <em>business</em> before we touch the <em>technology.</em></p>
+      <div class="wedge-body rv rv-d2">
         <p>Most "AI" firms lead with the tools. We lead with your business. For over twenty years, we have diagnosed and fixed operational friction inside large multinationals in the energy trading and shipping sectors — places where a single inefficiency costs real money, fast.</p>
-        <p>The problems a growing independent business faces aren't so different. The systems haven't kept up. The processes are holding things back. We've spent a career fixing exactly that.</p>
+        <p>The problems a growing independent business faces aren't so different. The systems haven't kept up. The processes are holding things back. <strong>We've spent a career fixing exactly that.</strong></p>
         <p>And when the tools themselves are the problem, we go further — designing and building complete, AI-powered platforms that replace an organisation's software entirely.</p>
-        <p style="margin-top:1.5rem"><a class="text-link" href="about.html" style="color:#fff">About us</a></p>
+        <p style="margin-top:1.6rem"><a class="text-link" href="about.html">About us</a></p>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section>
+  <!-- 04 — HOW IT WORKS -->
+  <section class="panel panel-dark">
+    <span class="sec-no" aria-hidden="true">04</span>
     <div class="wrap">
-      <div class="center" style="max-width:42ch;margin:0 auto 2.4rem">
+      <div class="rv" style="max-width:48ch;margin-bottom:3.5rem">
         <span class="eyebrow">How it works</span>
-        <h2>A clear path, low-risk at every step.</h2>
+        <h2>A clear path, <strong>low-risk</strong> at every step.</h2>
       </div>
-      <div class="steps" style="max-width:760px;margin:0 auto">
-        <div class="step"><div class="badge">1</div><div><h3>Discover</h3><p>A structured deep-dive into your business, delivered as a clear Insight Report: what's holding you back, what it's costing, and exactly how to fix it.</p></div></div>
-        <div class="step"><div class="badge">2</div><div><h3>Deliver</h3><p>We build the solutions — automation, dashboards, integrations, redesigned processes — anchored to what your business actually needs.</p></div></div>
-        <div class="step"><div class="badge">3</div><div><h3>Retain</h3><p>We stay close as your operational intelligence partner, keeping things improving month after month.</p></div></div>
+      <div class="journey">
+        <div class="stage rv">
+          <span class="st-no">01</span>
+          <h3>Discover</h3>
+          <p>A structured deep-dive into your business, delivered as a clear Insight Report: what's holding you back, what it's costing, and exactly how to fix it.</p>
+        </div>
+        <div class="stage rv rv-d1">
+          <span class="st-no">02</span>
+          <h3>Deliver</h3>
+          <p>We build the solutions — automation, dashboards, integrations, redesigned processes — anchored to what your business actually needs.</p>
+        </div>
+        <div class="stage rv rv-d2">
+          <span class="st-no">03</span>
+          <h3>Retain</h3>
+          <p>We stay close as your operational intelligence partner, keeping things improving month after month.</p>
+        </div>
       </div>
-      <p class="center" style="margin-top:2rem"><a class="text-link" href="how-it-works.html">See how it works in detail</a></p>
+      <p class="rv" style="margin-top:2.4rem"><a class="text-link" href="how-it-works.html">See how it works in detail</a></p>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-band">
-    <svg class="hero-motif" viewBox="0 0 1200 620" preserveAspectRatio="xMaxYMax slice" aria-hidden="true" focusable="false">
-      <g fill="#5B9BD5" opacity="0.07"><polygon points="720,620 900,250 1080,620"/><polygon points="900,620 1040,330 1180,620"/></g>
-      <polygon points="560,620 815,150 1070,620" fill="#ffffff" opacity="0.03"/>
+  <section class="final-cta">
+    <svg class="final-mark" viewBox="0 0 640 520" aria-hidden="true">
+      <polygon points="60,520 160,340 192,520" fill="#85B7E2"/>
+      <polygon points="160,340 260,520 192,520" fill="#5B9BD5"/>
+      <polygon points="200,520 330,220 372,520" fill="#3D7FC4"/>
+      <polygon points="330,220 460,520 372,520" fill="#2B6CB0"/>
+      <polygon points="380,520 480,90 512,520" fill="#FFFFFF"/>
+      <polygon points="480,90 580,520 512,520" fill="#BCD2E8"/>
     </svg>
     <div class="wrap">
-      <h2>Curious what we'd find in your business?</h2>
-      <p class="lede">Start with the Business Readiness Assessment — a short, structured questionnaire that helps us both understand where the real opportunities are. No cost, no obligation, about 20 minutes.</p>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="start-here.html">Start the Readiness Assessment</a>
-        <span class="small">or <a href="contact.html">book a quick call →</a></span>
+      <h2 class="rv">Curious what we'd find in <em>your</em> business?</h2>
+      <p class="lede rv rv-d1">Start with the Business Readiness Assessment — a short, structured questionnaire that helps us both understand where the real opportunities are. No cost, no obligation, about 20 minutes.</p>
+      <div class="cta-actions rv rv-d2">
+        <a class="btn btn-primary" href="start-here.html">Start the Readiness Assessment <span class="arrow">→</span></a>
+        <a class="btn btn-outline" href="contact.html">Book a quick call</a>
       </div>
     </div>
   </section>
-
 </main>
-
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <svg viewBox="0 0 360 92" width="300" height="38" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vertisco Consulting">
-          <g transform="translate(6,16)">
-            <polygon points="6,52 16,34 26,52" fill="#2B6CB0"/>
-            <polygon points="20,52 32,22 44,52" fill="#5B9BD5"/>
-            <polygon points="38,52 48,9 58,52" fill="#FFFFFF"/>
+        <svg viewBox="0 0 360 92" width="300" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vertisco Consulting">
+          <g transform="translate(4,16)">
+            <polygon points="1.6,52 8.5,34 10.7,52" fill="#3D7FC4"/>
+            <polygon points="8.5,34 15.5,52 10.7,52" fill="#2B6CB0"/>
+            <polygon points="10.5,52 22,22 25.7,52" fill="#79AEDE"/>
+            <polygon points="22,22 33.5,52 25.7,52" fill="#5B9BD5"/>
+            <polygon points="28.5,52 45,9 50.3,52" fill="#FFFFFF"/>
+            <polygon points="45,9 61.6,52 50.3,52" fill="#BCD2E8"/>
           </g>
           <text x="92" y="50" font-family="Urbanist,sans-serif" font-size="31" font-weight="500" letter-spacing="6" fill="#FFFFFF">VERTISCO</text>
-          <text x="94" y="69" font-family="Urbanist,sans-serif" font-size="10.5" font-weight="500" letter-spacing="7.5" fill="#5B9BD5">CONSULTING</text>
+          <text x="92" y="69" font-family="Urbanist,sans-serif" font-size="10.5" font-weight="500" letter-spacing="13.76" fill="#5B9BD5">CONSULTING</text>
         </svg>
         <p>Operational intelligence and AI consulting for ambitious UK businesses. Turning complexity into clarity.</p>
       </div>
@@ -208,7 +268,8 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="how-it-works.html">How it works</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="approach.html">Approach</a></li><li><a href="insights.html">Insights</a></li>
+          <li><a href="approach.html">Approach</a></li>
+          <li><a href="insights.html">Insights</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -227,12 +288,21 @@
     </div>
   </div>
 </footer>
-
 <script>
-  (function(){
-    var t=document.getElementById('navToggle'),n=document.getElementById('navlinks');
-    if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o);t.setAttribute('aria-label',o?'Close menu':'Open menu');});}
-  })();
+(function(){
+  var h=document.getElementById('hdr');
+  if(h){addEventListener('scroll',function(){h.classList.toggle('solid',scrollY>40)},{passive:true});h.classList.toggle('solid',scrollY>40);}
+  var t=document.getElementById('navToggle'),n=document.getElementById('navlinks');
+  if(t&&n){t.addEventListener('click',function(){
+    var o=n.classList.toggle('open');t.classList.toggle('open',o);document.body.classList.toggle('no-scroll',o);
+    t.setAttribute('aria-expanded',o);t.setAttribute('aria-label',o?'Close menu':'Open menu');});}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  } else { document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')}); }
+})();
 </script>
 </body>
 </html>
