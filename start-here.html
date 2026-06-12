@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DYDHD1P7Y"></script>
@@ -155,11 +155,11 @@
           <span class="eyebrow">03 — Your challenges</span>
           <h3>How big is each issue?</h3>
           <p class="sub">Be honest — there are no wrong answers. Tick the one that fits.</p>
-          <div class="asm-field"><label>Manual, repetitive tasks taking up too much staff time</label><div class="asm-scale"><label><input type="radio" name="Challenge: Manual" value="Not an issue">Not an issue</label><label><input type="radio" name="Challenge: Manual" value="Minor">Minor</label><label><input type="radio" name="Challenge: Manual" value="Significant">Significant</label><label><input type="radio" name="Challenge: Manual" value="Major">Major</label></div></div>
-          <div class="asm-field"><label>Disconnected systems that don't talk to each other</label><div class="asm-scale"><label><input type="radio" name="Challenge: Disconnected systems that don't talk to each oth" value="Not an issue">Not an issue</label><label><input type="radio" name="Challenge: Disconnected systems that don't talk to each oth" value="Minor">Minor</label><label><input type="radio" name="Challenge: Disconnected systems that don't talk to each oth" value="Significant">Significant</label><label><input type="radio" name="Challenge: Disconnected systems that don't talk to each oth" value="Major">Major</label></div></div>
+          <div class="asm-field"><label>Manual, repetitive tasks taking up too much staff time</label><div class="asm-scale"><label><input type="radio" name="Challenge: Manual repetitive tasks" value="Not an issue">Not an issue</label><label><input type="radio" name="Challenge: Manual repetitive tasks" value="Minor">Minor</label><label><input type="radio" name="Challenge: Manual repetitive tasks" value="Significant">Significant</label><label><input type="radio" name="Challenge: Manual repetitive tasks" value="Major">Major</label></div></div>
+          <div class="asm-field"><label>Disconnected systems that don't talk to each other</label><div class="asm-scale"><label><input type="radio" name="Challenge: Disconnected systems" value="Not an issue">Not an issue</label><label><input type="radio" name="Challenge: Disconnected systems" value="Minor">Minor</label><label><input type="radio" name="Challenge: Disconnected systems" value="Significant">Significant</label><label><input type="radio" name="Challenge: Disconnected systems" value="Major">Major</label></div></div>
           <div class="asm-field"><label>Lack of real-time visibility of the business</label><div class="asm-scale"><label><input type="radio" name="Challenge: Lack of real-time visibility of the business" value="Not an issue">Not an issue</label><label><input type="radio" name="Challenge: Lack of real-time visibility of the business" value="Minor">Minor</label><label><input type="radio" name="Challenge: Lack of real-time visibility of the business" value="Significant">Significant</label><label><input type="radio" name="Challenge: Lack of real-time visibility of the business" value="Major">Major</label></div></div>
-          <div class="asm-field"><label>Too much reliance on spreadsheets or tribal knowledge</label><div class="asm-scale"><label><input type="radio" name="Challenge: Too much reliance on spreadsheets or tribal know" value="Not an issue">Not an issue</label><label><input type="radio" name="Challenge: Too much reliance on spreadsheets or tribal know" value="Minor">Minor</label><label><input type="radio" name="Challenge: Too much reliance on spreadsheets or tribal know" value="Significant">Significant</label><label><input type="radio" name="Challenge: Too much reliance on spreadsheets or tribal know" value="Major">Major</label></div></div>
-          <div class="asm-field"><label>Invoicing, billing or financial admin taking too long</label><div class="asm-scale"><label><input type="radio" name="Challenge: Invoicing" value="Not an issue">Not an issue</label><label><input type="radio" name="Challenge: Invoicing" value="Minor">Minor</label><label><input type="radio" name="Challenge: Invoicing" value="Significant">Significant</label><label><input type="radio" name="Challenge: Invoicing" value="Major">Major</label></div></div>
+          <div class="asm-field"><label>Too much reliance on spreadsheets or tribal knowledge</label><div class="asm-scale"><label><input type="radio" name="Challenge: Spreadsheets and tribal knowledge" value="Not an issue">Not an issue</label><label><input type="radio" name="Challenge: Spreadsheets and tribal knowledge" value="Minor">Minor</label><label><input type="radio" name="Challenge: Spreadsheets and tribal knowledge" value="Significant">Significant</label><label><input type="radio" name="Challenge: Spreadsheets and tribal knowledge" value="Major">Major</label></div></div>
+          <div class="asm-field"><label>Invoicing, billing or financial admin taking too long</label><div class="asm-scale"><label><input type="radio" name="Challenge: Invoicing and financial admin" value="Not an issue">Not an issue</label><label><input type="radio" name="Challenge: Invoicing and financial admin" value="Minor">Minor</label><label><input type="radio" name="Challenge: Invoicing and financial admin" value="Significant">Significant</label><label><input type="radio" name="Challenge: Invoicing and financial admin" value="Major">Major</label></div></div>
           <div class="asm-field"><label>Key information locked in individuals' heads</label><div class="asm-scale"><label><input type="radio" name="Challenge: Key information locked in individuals' heads" value="Not an issue">Not an issue</label><label><input type="radio" name="Challenge: Key information locked in individuals' heads" value="Minor">Minor</label><label><input type="radio" name="Challenge: Key information locked in individuals' heads" value="Significant">Significant</label><label><input type="radio" name="Challenge: Key information locked in individuals' heads" value="Major">Major</label></div></div>
         </div>
 
@@ -252,6 +252,12 @@
   var bar=document.getElementById('asmBar'), count=document.getElementById('asmCount');
   var back=document.getElementById('asmBack'), next=document.getElementById('asmNext'), submit=document.getElementById('asmSubmit'), err=document.getElementById('asmError');
   var started=false;
+  /* Associate labels with controls and name radio groups for assistive tech */
+  form.querySelectorAll('.asm-field').forEach(function(f,k){
+    var l=f.querySelector(':scope>label'),c=f.querySelector('input:not([type=radio]),textarea,select'),sc=f.querySelector('.asm-scale');
+    if(l&&c&&!c.id){c.id='asm-f'+k;l.setAttribute('for','asm-f'+k);}
+    if(l&&sc){sc.setAttribute('role','radiogroup');sc.setAttribute('aria-label',l.textContent.replace('*','').trim());}
+  });
   function show(n){
     steps.forEach(function(s,k){s.classList.toggle('active',k===n)});
     bar.style.width=((n+1)/total*100)+'%'; count.textContent='Step '+(n+1)+' of '+total;
@@ -259,6 +265,7 @@
     next.style.display=(n===total-1)?'none':''; submit.style.display=(n===total-1)?'':'none';
     err.classList.remove('show');
     if(started||n>0){var y=form.getBoundingClientRect().top+window.scrollY-110; window.scrollTo({top:y,behavior:'smooth'});}
+    if((started||n>0)&&typeof gtag==='function'){gtag('event','assessment_step',{step_number:n+1});}
     i=n; started=true;
   }
   function validate(n){
@@ -274,7 +281,7 @@
   }
   next.addEventListener('click',function(){ if(validate(i)) show(i+1); });
   back.addEventListener('click',function(){ show(i-1); });
-  form.addEventListener('submit',function(e){ if(!validate(i)){ e.preventDefault(); } });
+  form.addEventListener('submit',function(e){ if(!validate(i)){ e.preventDefault(); } else if(typeof gtag==='function'){ gtag('event','assessment_submit'); } });
   started=false; show(0); started=false;
 })();
 </script>

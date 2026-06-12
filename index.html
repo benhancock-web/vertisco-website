@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -109,6 +109,7 @@
         <a class="btn btn-primary" href="start-here.html">Start the Readiness Assessment <span class="arrow">→</span></a>
         <a class="btn btn-outline" href="contact.html">Book a quick call</a>
       </div>
+      <p class="hero-cred fade-3">Built on two decades inside global energy trading &amp; shipping.</p>
     </div>
     <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
   </section>
@@ -156,7 +157,7 @@
           <span class="idx">01</span>
           <div>
             <h3>Operational Intelligence</h3>
-            <p>A holistic, end-to-end view of your business — mapping how work really flows, and surfacing the hidden inefficiencies quietly costing you time and money.</p>
+            <p>A complete, end-to-end view of your business — mapping how work really flows, and surfacing the hidden inefficiencies quietly costing you time and money.</p>
           </div>
           <svg class="peak" viewBox="0 0 64 56" aria-hidden="true"><polygon points="1.6,52 8.5,34 10.7,52" fill="#3D7FC4"/><polygon points="8.5,34 15.5,52 10.7,52" fill="#2B6CB0"/><polygon points="10.5,52 22,22 25.7,52" fill="#79AEDE"/><polygon points="22,22 33.5,52 25.7,52" fill="#5B9BD5"/><polygon points="28.5,52 45,9 50.3,52" fill="#FFFFFF"/><polygon points="45,9 61.6,52 50.3,52" fill="#BCD2E8"/></svg>
         </a>
@@ -196,9 +197,28 @@
     </div>
   </section>
 
-  <!-- 04 — HOW IT WORKS -->
-  <section class="panel panel-dark">
+  <!-- 04 — THE PROOF -->
+  <section class="panel panel-light" id="proof">
     <span class="sec-no" aria-hidden="true">04</span>
+    <div class="wrap">
+      <div class="rv" style="max-width:56ch">
+        <span class="eyebrow">The proof</span>
+        <h2>We don't just advise. <strong>We build.</strong></h2>
+        <p class="lede" style="margin-top:1.4rem">Our flagship engagement: a complete operations platform for an owner-led business, replacing its off-the-shelf project-management software entirely.</p>
+      </div>
+      <div class="stats">
+        <div class="stat rv"><span class="num"><span class="count" data-count="400">400</span><span class="suffix">+</span></span><p class="label">properties progressed through the platform</p></div>
+        <div class="stat rv rv-d1"><span class="num"><span class="count" data-count="8500" data-sep>8,500</span><span class="suffix">+</span></span><p class="label">records migrated — zero data loss</p></div>
+        <div class="stat rv rv-d2"><span class="num"><span class="count" data-count="7">7</span></span><p class="label">live dashboards, updated in real time</p></div>
+        <div class="stat rv rv-d3"><span class="num"><span class="count" data-count="100">100</span><span class="suffix">%</span></span><p class="label">of invoices generated automatically</p></div>
+      </div>
+      <p class="proof-outro rv">Delivered in months, not years — and <strong>fully owned by the client.</strong> <a class="text-link" href="services.html#flagship">Read the full story</a></p>
+    </div>
+  </section>
+
+  <!-- 05 — HOW IT WORKS -->
+  <section class="panel panel-dark">
+    <span class="sec-no" aria-hidden="true">05</span>
     <div class="wrap">
       <div class="rv" style="max-width:48ch;margin-bottom:3.5rem">
         <span class="eyebrow">How it works</span>
@@ -302,6 +322,21 @@
     },{threshold:.12,rootMargin:'0px 0px -60px 0px'});
     document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
   } else { document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')}); }
+  /* Count-up animation for the proof band stats */
+  var cnt=document.querySelectorAll('.count[data-count]');
+  function setFinal(el){var n=parseInt(el.getAttribute('data-count'),10);el.textContent=el.hasAttribute('data-sep')?n.toLocaleString('en-GB'):String(n);}
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var co=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return; co.unobserve(e.target);
+        var el=e.target,end=parseInt(el.getAttribute('data-count'),10),sep=el.hasAttribute('data-sep'),t0=null,dur=1500;
+        function tick(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),v=Math.round(end*(1-Math.pow(1-p,3)));
+          el.textContent=sep?v.toLocaleString('en-GB'):String(v);if(p<1)requestAnimationFrame(tick);}
+        requestAnimationFrame(tick);
+      });
+    },{threshold:.5});
+    cnt.forEach(function(el){co.observe(el)});
+  } else { cnt.forEach(setFinal); }
 })();
 </script>
 </body>
